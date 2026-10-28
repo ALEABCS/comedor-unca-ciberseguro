@@ -1,0 +1,195 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1790775841448,
+      "tag": "0000_clever_hercules",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1790775944211,
+      "tag": "0001_tiresome_mastermind",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1790776610190,
+      "tag": "0002_legal_shocker",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1790776695819,
+      "tag": "0003_robust_runaways",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1790784406653,
+      "tag": "0004_youthful_ben_urich",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1790860910978,
+      "tag": "0005_dusty_darwin",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1790901022417,
+      "tag": "0006_lyrical_power_pack",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1790903208490,
+      "tag": "0007_sparkling_polaris",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1790903325306,
+      "tag": "0008_spotty_tyrannus",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1790904075075,
+      "tag": "0009_spooky_titanium_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "5",
+      "when": 1790905542740,
+      "tag": "0010_past_lester",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "5",
+      "when": 1790908613425,
+      "tag": "0011_fresh_selene",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "5",
+      "when": 1791061021301,
+      "tag": "0012_ancient_pyro",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "5",
+      "when": 1791072945064,
+      "tag": "0013_accessibility_preferences",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "5",
+      "when": 1791073879177,
+      "tag": "0014_silky_supreme_intelligence",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "5",
+      "when": 1791074195994,
+      "tag": "0015_petite_scourge",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "5",
+      "when": 1791074196000,
+      "tag": "0016_correct_beverage_food_types",
+      "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "5",
+      "when": 1791294971813,
+      "tag": "0017_unusual_the_stranger",
+      "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "5",
+      "when": 1791296842195,
+      "tag": "0018_fuzzy_korath",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "5",
+      "when": 1791375118808,
+      "tag": "0019_steady_toad",
+      "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "5",
+      "when": 1791375942613,
+      "tag": "0020_square_rockslide",
+      "breakpoints": true
+    },
+    {
+      "idx": 21,
+      "version": "5",
+      "when": 1792191423574,
+      "tag": "0021_perfect_scarecrow",
+      "breakpoints": true
+    },
+    {
+      "idx": 22,
+      "version": "5",
+      "when": 1792196715944,
+      "tag": "0022_lowly_ultimatum",
+      "breakpoints": true
+    },
+    {
+      "idx": 23,
+      "version": "5",
+      "when": 1792199513022,
+      "tag": "0023_light_nick_fury",
+      "breakpoints": true
+    },
+    {
+      "idx": 24,
+      "version": "5",
+      "when": 1792505879920,
+      "tag": "0024_peaceful_sugar_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 25,
+      "version": "5",
+      "when": 1792509953685,
+      "tag": "0025_ambiguous_maverick",
+      "breakpoints": true
+    },
+    {
+      "idx": 26,
+      "version": "5",
+      "when": 1793109707020,
+      "tag": "0026_tiny_lady_bullseye",
+      "breakpoints": true
+    }
+  ]
+}

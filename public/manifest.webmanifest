@@ -1,0 +1,27 @@
+{
+  "id": "/",
+  "name": "Comedor Universitario UNCA",
+  "short_name": "Comedor UNCA",
+  "description": "Plataforma institucional del Comedor Universitario de la Universidad Nacional de Catamarca.",
+  "lang": "es-AR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f7f8f5",
+  "theme_color": "#123c32",
+  "icons": [
+    {
+      "src": "/branding/comedor-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/branding/comedor-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

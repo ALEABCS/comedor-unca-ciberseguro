@@ -1,0 +1,2 @@
+ALTER TABLE `payment_references` DROP INDEX `uq_payment_provider_reference`;--> statement-breakpoint
+ALTER TABLE `payment_references` ADD CONSTRAINT `uq_payment_provider_method_reference` UNIQUE(`provider`,`method`,`provider_reference`);

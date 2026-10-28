@@ -1,0 +1,1 @@
+ALTER TABLE `payment_finance_events` MODIFY COLUMN `created_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6);

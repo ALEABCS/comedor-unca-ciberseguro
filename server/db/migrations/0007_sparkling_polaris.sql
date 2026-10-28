@@ -1,0 +1,1 @@
+ALTER TABLE `reservations` ADD COLUMN IF NOT EXISTS `no_show_at` timestamp NULL DEFAULT NULL;

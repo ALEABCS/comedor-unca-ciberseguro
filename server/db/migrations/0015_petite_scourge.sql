@@ -1,0 +1,1 @@
+ALTER TABLE `events_news` ADD `visibility` enum('PUBLICO','PRIVADO') DEFAULT 'PUBLICO' NOT NULL;

@@ -1,0 +1,1 @@
+ALTER TABLE `users` ADD `accessibility_preferences` json;
