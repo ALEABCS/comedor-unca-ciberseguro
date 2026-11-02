@@ -1,0 +1,75 @@
+# Despliegue en Dokploy: ver docs/despliegue-dokploy.md.
+# El dominio se configura en la pestaña Domains, servicio "app", puerto 4000.
+# No se publican puertos en el host: Traefik llega a la app por la red de Dokploy.
+
+services:
+  comedor-db:
+    # MariaDB y no MySQL: las migraciones 0005, 0006 y 0007 usan
+    # "ADD COLUMN IF NOT EXISTS", que MySQL 8 rechaza.
+    image: mariadb:10.11
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: ${DB_NAME:-comedor_unca}
+      MARIADB_USER: ${DB_USER:-comedor}
+      MARIADB_PASSWORD: ${DB_PASSWORD:?Falta DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?Falta DB_ROOT_PASSWORD}
+    # La aplicación conecta con timezone "Z": la base tiene que operar en UTC.
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_general_ci
+      - --default-time-zone=+00:00
+    volumes:
+      - comedor_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  # Se ejecuta en cada despliegue y termina. Ambos pasos son repetibles;
+  # si alguno falla, la app no arranca.
+  migrate:
+    build: .
+    image: comedor-unca-app:latest
+    restart: "no"
+    command: ["sh", "-c", "node --import tsx server/db/migrate.ts && node --import tsx server/db/seed.ts"]
+    environment: &app_env
+      NODE_ENV: production
+      PORT: "4000"
+      APP_URL: ${APP_URL:?Falta APP_URL}
+      GOOGLE_CALLBACK_URL: ${APP_URL:?Falta APP_URL}/auth/google/callback
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:?Falta GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:?Falta GOOGLE_CLIENT_SECRET}
+      DB_HOST: comedor-db
+      DB_PORT: "3306"
+      DB_NAME: ${DB_NAME:-comedor_unca}
+      DB_USER: ${DB_USER:-comedor}
+      DB_PASSWORD: ${DB_PASSWORD:?Falta DB_PASSWORD}
+      SESSION_SECRET: ${SESSION_SECRET:?Falta SESSION_SECRET}
+      QR_SIGNING_SECRET: ${QR_SIGNING_SECRET:?Falta QR_SIGNING_SECRET}
+      TOTP_ENCRYPTION_SECRET: ${TOTP_ENCRYPTION_SECRET:?Falta TOTP_ENCRYPTION_SECRET}
+      DEMO_MODE: "false"
+      DEMO_GUEST_MODE: "false"
+    healthcheck:
+      disable: true
+    depends_on:
+      comedor-db:
+        condition: service_healthy
+
+  app:
+    build: .
+    image: comedor-unca-app:latest
+    restart: unless-stopped
+    init: true
+    environment: *app_env
+    expose:
+      - "4000"
+    depends_on:
+      comedor-db:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+
+volumes:
+  comedor_db_data:

@@ -1,0 +1,36 @@
+# Nunca copiar secretos a la imagen
+.env
+.env.*
+!.env.example
+
+# Dependencias y compilados: se regeneran dentro de la imagen
+node_modules
+dist
+dist-server
+coverage
+*.tsbuildinfo
+
+# Control de versiones y herramientas
+.git
+.github
+.playwright-mcp
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Respaldos y archivos que la aplicación no usa en ejecución
+Backup
+*.zip
+*.bak
+*.old
+*.log
+logs
+*.docx
+*.lnk
+*.md
+docs
+database
+scripts
+tests
+40876.jpg
+LOGO COMEDOR UNCA.png
